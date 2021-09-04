@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter } from 'react-router-dom';
 
-// import Navbar from "./app";
-// import Footer from "./app/components/Footer/Footer";
-// import Home from "./app/pages/Home/Home";
+import Navbar from "./app/components/Navbar/Navbar";
+import Footer from "./app/components/Footer/Footer";
+import Home from "./app/pages/Home/Home";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.scss";
@@ -13,9 +13,9 @@ import "./App.scss";
 const App = () => {
   return (
     <BrowserRouter>
-      {/* <Navbar />
+      <Navbar />
       <Home />
-      <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
