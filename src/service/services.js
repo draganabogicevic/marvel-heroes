@@ -15,7 +15,8 @@ export const fetchHeroes = () => {
       console.log(json.data.results);
       let heroes = json.data.results.map((hero) => {
         return new Hero(hero.id, hero.name, hero.description,
-          hero.thumbnail.path + "/", hero.comics.collectionURI, hero.thumbnail.extension);
+          hero.thumbnail.path + "/portrait_medium." + hero.thumbnail.extension,
+          hero.comics.collectionURI);
       });
       return heroes;
     });
@@ -34,7 +35,8 @@ export const fetchComics = (collectionURI) => {
       console.log("FETCHED COMICS: ", json);
       let comics = json.data.results.map(comic => {
         return new Comic(comic.id, comic.title, comic.description,
-          comic.thumbnail.path + "/landscape_medium.jpg", comic.creators,
+          comic.thumbnail.path + "/landscape_medium." +
+          comic.thumbnail.extension, comic.creators,
           comic.characters, comic.prices[0].price, comic.dates[0].date);
       });
       console.log(comics);
