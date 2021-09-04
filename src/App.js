@@ -1,10 +1,15 @@
+
 import React, { useState, useEffect } from "react";
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { Switch, Route, Redirect } from 'react-router-dom';
+
 
 import MarvelNavbar from "./app/components/MarvelNavbar/MarvelNavbar";
 import MarvelFooter from "./app/components/MarvelFooter/MarvelFooter";
 import Home from "./app/pages/Home/Home";
 import Comic from "./entities/Comic";
+import HeroOverview from "./app/pages/HeroOverview/HeroOverview";
+import PageNotFound from "./app/pages/PageNotFound/PageNotFound";
 import { Container } from "react-bootstrap";
 import { ALL_CHARACTERS_ENDPOINT } from "./service/endpoints.js"
 
@@ -48,11 +53,28 @@ const App = () => {
   console.log(comics)
   return (
     <Container fluid id="MarvelHeroes">
-
       <MarvelNavbar />
-      <Home />
-      <MarvelFooter />
 
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+
+        <Route exact path="/hero/:id">
+          <HeroOverview />
+        </Route>
+
+        <Route exact path="/heroes">
+          <Redirect to="/" />
+        </Route>
+
+        <Route>
+          <PageNotFound />
+        </Route>
+
+      </Switch>
+
+      <MarvelFooter />
     </Container>
 
   );

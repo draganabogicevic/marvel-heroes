@@ -1,0 +1,18 @@
+%btn-mix {
+  all: unset;
+  margin: 1rem auto;
+  padding: .4rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  &:hover {
+      transform: scale(102%);
+      filter: brightness(1.1);
+  }
+  // :active must come after hover!!!
+  &:active {
+      transform: scale(98%);
+      filter: brightness(0.93);
+  }
+}
+
+/// then just use  @extend %btn-mix
