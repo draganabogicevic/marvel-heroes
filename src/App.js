@@ -1,22 +1,25 @@
 import React from "react";
 import { BrowserRouter } from 'react-router-dom';
 
-// import Navbar from "./app";
-// import Footer from "./app/components/Footer/Footer";
-// import Home from "./app/pages/Home/Home";
+import MarvelNavbar from "./app/components/MarvelNavbar/MarvelNavbar";
+import MarvelFooter from "./app/components/MarvelFooter/MarvelFooter";
+import Home from "./app/pages/Home/Home";
+import { Container } from "react-bootstrap";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.scss";
 
 
-
 const App = () => {
   return (
-    <BrowserRouter>
-      {/* <Navbar />
+    <Container fluid id="MarvelHeroes">
+
+      <MarvelNavbar />
       <Home />
-      <Footer /> */}
-    </BrowserRouter>
+      <MarvelFooter />
+
+    </Container>
+
   );
 }
 

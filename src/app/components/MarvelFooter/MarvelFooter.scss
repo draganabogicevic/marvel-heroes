@@ -1,0 +1,15 @@
+@import "../../../sass-common/variables";
+
+#MarvelHeroes {
+  .MarvelFooter {
+    font-family: $heading-font-family;
+    font-weight: lighter;
+    background-color: $navbar-footer-bg-col;
+    color: $navbar-footer-col;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 2rem;
+  }
+}

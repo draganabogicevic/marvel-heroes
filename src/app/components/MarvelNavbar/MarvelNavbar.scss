@@ -1,0 +1,12 @@
+@import "../../../sass-common/variables";
+
+#MarvelHeroes {
+  nav.MarvelNavbar {
+    font-family: $heading-font-family;
+    font-size: 2.5rem;
+    background-color: $navbar-footer-bg-col;
+    color: $navbar-footer-col;
+    height: 4rem;
+    
+  }
+}
