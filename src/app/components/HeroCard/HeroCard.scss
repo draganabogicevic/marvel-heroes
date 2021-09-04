@@ -1,0 +1,35 @@
+@import "../../../sass-common/variables";
+@import "../../../sass-common/mixins";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&display=swap');
+
+$card-bg: black;
+$card-font-color: whitesmoke;
+$card-font-family: 'Roboto Condensed', sans-serif;
+$card-width: 12rem;
+$add-btn-color: rgb(255, 208, 0);
+$info-btn-color: white;
+
+#MarvelHeroes {
+  .HeroCard {
+    background-color: $card-bg;
+    font-family: $card-font-family;
+    color: $card-font-color;
+    width: $card-width;
+    &:hover {
+      background-color: $navbar-footer-bg-col;
+    }
+    .heroName {
+      text-transform: capitalize;
+
+    }
+    .infoBtn {
+      @extend %btn-mix;
+      background-color: $info-btn-color;
+      border-color: black;
+    }
+    .addBtn {
+      @extend %btn-mix;
+      background-color: $add-btn-color;
+    }
+  }
+}
