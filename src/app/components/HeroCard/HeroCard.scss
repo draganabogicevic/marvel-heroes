@@ -5,7 +5,6 @@
 $card-bg: black;
 $card-font-color: whitesmoke;
 $card-font-family: 'Roboto Condensed', sans-serif;
-$card-width: 12rem;
 $add-btn-color: rgb(255, 208, 0);
 $info-btn-color: white;
 
@@ -14,9 +13,11 @@ $info-btn-color: white;
     background-color: $card-bg;
     font-family: $card-font-family;
     color: $card-font-color;
-    width: $card-width;
     &:hover {
       background-color: $navbar-footer-bg-col;
+    }
+    .cardImg {
+      width: 100%;
     }
     .heroName {
       text-transform: capitalize;
