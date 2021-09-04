@@ -1,10 +1,9 @@
-
 import React from "react";
 
-const Home = () => {
-    return (
-        <dir>This is Home</dir>
-    )
+const Home = (props) => {
+  return (
+    <div></div>
+  )
 }
 
 export default Home;
