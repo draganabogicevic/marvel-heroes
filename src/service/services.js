@@ -15,7 +15,7 @@ export const fetchHeroes = () => {
       console.log(json.data.results);
       let heroes = json.data.results.map((hero) => {
         return new Hero(hero.id, hero.name, hero.description,
-          hero.thumbnail.path + "/", hero.comics.collectionURI);
+          hero.thumbnail.path + "/", hero.comics.collectionURI, hero.thumbnail.extension);
       });
       return heroes;
     });

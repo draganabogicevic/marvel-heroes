@@ -11,21 +11,23 @@ const Home = (props) => {
         <button className="btn rounded-pill text-light bg-danger"> Go </button>
         <div className="row">
           {characters.map(singleHero => (
-          <div className="col-md-2 m-2">
-            <HeroCard singleHero={singleHero}/>
-          </div> 
+
+            <HeroCard
+              singleHero={singleHero}
+              key={singleHero.id} />
+
           ))}
         </div>
-      </div> 
+      </div>
       <div className="col-md-2">
         <h4 className="display-5 text-light">My Team</h4>
         <div className="row">
           <div className="col-md-4">
-            
+
           </div>
         </div>
       </div>
-   
+
     </div>
   )
 }
