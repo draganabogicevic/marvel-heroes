@@ -6,13 +6,7 @@ import { BookmarkFill, Bookmark, InfoSquareFill } from "react-bootstrap-icons";
 import "./HeroCard.scss";
 
 const HeroCard = (props) => {
-  const { singleHero } = props
-
-  // TODO: stub
-  const isBookmarked = (hero) => {
-    // return false;
-    return true;
-  };
+  const { singleHero } = props;
 
   return (
 
@@ -29,11 +23,16 @@ const HeroCard = (props) => {
             </Card.Title>
 
             <div className="d-flex align-items-end">
-              <Link to={"/hero/" + singleHero.id}><InfoSquareFill className="infoBtn">Info</InfoSquareFill></Link>
-              <div>{isBookmarked(singleHero) ?
-                (<BookmarkFill className="addBtn" />) :
-                (<Bookmark className="addBtn" />)
-              }
+              <Link to={"/hero/" + singleHero.id}>
+                <InfoSquareFill className="infoBtn">Info</InfoSquareFill>
+              </Link>
+              <div
+                onClick={() => props.onBookmarkClick(singleHero.id)}
+              >
+                {props.bookmarked ?
+                  (<BookmarkFill className="addBtn" />) :
+                  (<Bookmark className="addBtn" />)
+                }
               </div>
             </div>
           </Card.Body>

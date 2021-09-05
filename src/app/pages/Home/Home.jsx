@@ -4,6 +4,15 @@ import HeroCard from "../../components/HeroCard/HeroCard";
 
 const Home = (props) => {
   const { characters } = props;
+
+  const isBookmarked = (charId) => {
+    return props.bookmarked.findIndex(id => id === charId) !== -1;
+  };
+
+  const handleBookmarkClick = (id) => {
+    props.onBookmarkClick(id);
+  };
+
   return (
     <div className="row">
       <div className="col-md-7">
@@ -13,7 +22,11 @@ const Home = (props) => {
           {characters.map(singleHero => (
             <HeroCard
               singleHero={singleHero}
-              key={singleHero.id} />
+              key={singleHero.id}
+              bookmarked={isBookmarked(singleHero.id)}
+              onBookmarkClick={handleBookmarkClick}
+            />
+
           ))}
         </div>
       </div>

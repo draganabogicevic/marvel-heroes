@@ -1,10 +1,9 @@
 class Hero {
-    constructor(id, name, description, photo, comicsCollectionURI, extension) {
+    constructor(id, name, description, photo, comicsCollectionURI) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.extension = extension;
-        this.photo = photo + "/portrait_medium." + this.extension;
+        this.photo = photo;
         this.comics = comicsCollectionURI;
     }
 }
