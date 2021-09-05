@@ -6,14 +6,13 @@ const SideBar = (props) => {
     const { bookmarkedHeroes } = props;
     
     return (
+
         <div className="msb" id="msb">
 		    <nav className="navbar navbar-default" role="navigation">
 			    <div className="navbar-header">
 				    <div className="brand-wrapper">
 					    <div className="brand-name-wrapper">
-						    <a className="navbar-brand" href="#">
-							    <h3 className="display-3 text-light">My Team</h3>
-						    </a>
+							<h3 className="display-3 text-light">My Team</h3>
 					    </div>
 				    </div>
                 </div>
