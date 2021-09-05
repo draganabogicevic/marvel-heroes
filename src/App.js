@@ -19,6 +19,21 @@ const App = () => {
 
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [bookmarked, setBookmarked] = useState([]);
+
+  const isBookmarked = (charId) => {
+    return bookmarked.find(id => id === charId);
+  }
+
+  const handleBookmarkClick = (charId) => {
+    const character = characters.find((c => c.id === charId));
+    console.assert(character);
+    if (isBookmarked(charId)) {
+      setBookmarked(bookmarked.filter(id => id !== charId));
+    } else {
+      setBookmarked([...bookmarked, charId]);
+    }
+  };
 
   useEffect(() => {
     fetchHeroes()
@@ -43,6 +58,8 @@ const App = () => {
         <Route exact path="/">
           <Home
             characters={characters}
+            bookmarked={bookmarked}
+            onBookmarkClick={handleBookmarkClick}
           />
         </Route>
 
