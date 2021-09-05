@@ -29,7 +29,7 @@ const HeroCard = (props) => {
             </Card.Title>
 
             <div className="d-flex align-items-end">
-              <Link to={"/heroOverview" + singleHero.id}><InfoSquareFill className="infoBtn">Info</InfoSquareFill></Link>
+              <Link to={"/hero/" + singleHero.id}><InfoSquareFill className="infoBtn">Info</InfoSquareFill></Link>
               <div>{isBookmarked(singleHero) ?
                 (<BookmarkFill className="addBtn" />) :
                 (<Bookmark className="addBtn" />)

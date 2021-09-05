@@ -11,11 +11,9 @@ const Home = (props) => {
         <button className="btn rounded-pill text-light bg-danger"> Go </button>
         <div className="row">
           {characters.map(singleHero => (
-
             <HeroCard
               singleHero={singleHero}
               key={singleHero.id} />
-
           ))}
         </div>
       </div>
@@ -23,7 +21,7 @@ const Home = (props) => {
         <h4 className="display-5 text-light">My Team</h4>
         <div className="row">
           <div className="col-md-4">
-
+            
           </div>
         </div>
       </div>
