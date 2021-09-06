@@ -1,15 +1,18 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from 'react-router-dom';
 
 import { Card, Button, CardGroup } from "react-bootstrap";
 import { BookmarkFill, Bookmark, InfoSquareFill } from "react-bootstrap-icons";
+
+
+
 import "./HeroCard.scss";
 
 const HeroCard = (props) => {
   const { singleHero } = props;
-
+ 
   return (
-
+ 
     <div className="col-md-2 m-2">
       <CardGroup>
 
@@ -40,8 +43,11 @@ const HeroCard = (props) => {
         </Card>
 
       </CardGroup>
+     
     </div>
-
+   
+   
+   
   )
 }
 
