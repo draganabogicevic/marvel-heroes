@@ -5,6 +5,10 @@ class Hero {
         this.description = description;
         this.photo = photo;
         this.comics = comicsCollectionURI;
+        this.bookmarked = false;
+    }
+    toggleBookmark() {
+        this.bookmarked = !this.bookmarked;
     }
 }
 

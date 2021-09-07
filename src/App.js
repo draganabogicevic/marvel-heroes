@@ -14,31 +14,35 @@ import { Container } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.scss";
 
-
 const App = () => {
 
   const [characters, setCharacters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [bookmarked, setBookmarked] = useState([]);
 
-  const isBookmarked = (charId) => {
-    return bookmarked.find(id => id === charId);
-  }
+  const [bookmarked, setBookmarked] = useState([]); // array of bookmarked
+  // heroes, ordered by the time they were bookmarked (for the sidebar)
 
   const handleBookmarkClick = (charId) => {
-    const character = characters.find((c => c.id === charId));
-    console.assert(character);
-    if (isBookmarked(charId)) {
-      setBookmarked(bookmarked.filter(id => id !== charId));
-    } else {
-      setBookmarked([...bookmarked, charId]);
-    }
+    const selectedCharacter = characters.find((c => c.id === charId));
+    console.assert(selectedCharacter);
+    selectedCharacter.toggleBookmark();
+    setCharacters((prevCharacters) => {
+      return prevCharacters.map((c) => {
+        return c.id === charId ? selectedCharacter : c;
+      });
+    });
+    setBookmarked((prevBookmarked) => {
+      return (
+        selectedCharacter.bookmarked ?
+          [...prevBookmarked, selectedCharacter] :
+          prevBookmarked.filter(c => c.id !== selectedCharacter.id)
+      );
+    });
   };
 
   useEffect(() => {
     fetchHeroes()
       .then((heroes) => {
-        console.log(heroes); // TODO: delete
         setCharacters(heroes);
         setIsLoading(false);
       })
@@ -58,8 +62,8 @@ const App = () => {
         <Route exact path="/">
           <Home
             characters={characters}
-            bookmarked={bookmarked}
             onBookmarkClick={handleBookmarkClick}
+            bookmarked={bookmarked}
           />
         </Route>
 
